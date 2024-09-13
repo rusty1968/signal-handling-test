@@ -1,0 +1,14 @@
+[package]
+name = "signal-handling-rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nix = "0.26.0"
+caliptra-hw-model = { git = "https://github.com/chipsalliance/caliptra-sw.git" , branch = "main" }
+caliptra-registers = { git = "https://github.com/chipsalliance/caliptra-sw.git" , branch = "main" }
+[profile.dev]
+panic = 'unwind'  
+
+[features]
+fpga_realtime = ["caliptra-hw-model/fpga_realtime"]
